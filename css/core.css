@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Britannic Bold", sans-serif;
+    background: linear-gradient(135deg, #fff5f5 0%, #fce4ec 100%);
+    color: #333;
+}
+
+.btn {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid var(--pink);
+    background: white;
+    color: var(--pink);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--pink);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+    color: var(--dark-pink);
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--dark-pink);
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--dark-pink);
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 24px;
+    color: var(--dark-pink);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+strong {
+    color: var(--pink);
+}
+
+label {
+    font-size: 24px;
+    color: var(--pink);
+}
+
+input {
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 15px;
+    color: var(--pink);
+    background: white;
+    border: 2px solid var(--pink);
+    border-radius: 25px;
+}
+
+.checker {
+    color: var(--dark-pink);
+    font-size: 30px;
+}
+
+.btn-slide {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: var(--pink);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-weight: 800;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-slide:hover {
+    background: var(--dark-pink) !important;
+    cursor: pointer;
+    color: white;
+    transform: scale(1.1);
+}
+
+:root {
+    --pink: #ff69b4;
+    --dark-pink: #c71585;
+    --light-pink: #fff5f5;
+}
+
+/* FIX FOR ALL PAGES */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_content {
+    flex: 1;
+}

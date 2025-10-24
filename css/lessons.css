@@ -1,0 +1,219 @@
+/* PHONE CHECKER */
+.phone_block {
+    background: white;
+    padding: 100px 0;
+    border-bottom: 3px solid var(--light-pink);
+}
+
+.inner_phone_block {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--pink);
+    height: 300px;
+    border-radius: 20px;
+    align-items: center;
+    background: linear-gradient(135deg, #fffafc 0%, #fff5f9 100%);
+}
+
+.form_phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form_phone button {
+    width: 100%;
+    margin: 0;
+}
+
+/* TAB SLIDER */
+.tab_slider {
+    background: white;
+    padding: 100px 0;
+    border-bottom: 3px solid var(--light-pink);
+}
+
+.tab_content_block {
+    width: 700px;
+    border: 2px solid var(--pink);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    background: linear-gradient(135deg, #fffafc 0%, #fff5f9 100%);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.1);
+}
+
+.tab_content_block h4 {
+    color: var(--dark-pink);
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.tab_content_block p {
+    color: var(--dark-pink);
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.tab_content_items {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.tab_content_item {
+    padding: 15px;
+    height: 40px;
+    color: var(--dark-pink);
+    border: 2px solid var(--pink);
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab_content_item:hover {
+    background: rgba(255, 105, 180, 0.1);
+    transform: translateX(5px);
+}
+
+.tab_content_item_active {
+    background: linear-gradient(135deg, #ff69b4, #c71585);
+    color: white;
+    font-weight: 600;
+    border: 2px solid var(--dark-pink);
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.tab_contents_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+/* CARD SWITCHER - ИСПРАВЛЕННЫЙ */
+.card_switcher {
+    background-color: white;
+    padding: 100px 0;
+    border-bottom: 3px solid var(--light-pink);
+}
+
+.inner_card_switcher {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    width: 500px;
+    height: 200px;
+    border: 2px solid var(--pink);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fffafc 0%, #fff5f9 100%);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.1);
+}
+
+.card p {
+    color: var(--pink);
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.card span {
+    color: var(--dark-pink);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Кнопки Card Switcher */
+.inner_card_switcher .btn {
+    width: 100px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff69b4, #c71585);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.inner_card_switcher .btn:hover {
+    background: linear-gradient(135deg, #c71585, #ff69b4);
+    transform: translateY(-2px);
+}
+
+/* CONVERTER */
+.converter {
+    padding: 100px 0;
+    background-color: white;
+    border-bottom: 3px solid var(--light-pink);
+}
+
+.inner_converter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.inner_converter > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* WEATHER */
+.weather {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.inner_weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.inner_weather > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-pink);
+    font-size: 25px;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid var(--pink);
+}
