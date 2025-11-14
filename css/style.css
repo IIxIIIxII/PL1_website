@@ -456,3 +456,106 @@
     100% {
     }
 }
+/* STOPWATCH WITH SPEED CONTROL */
+.stopwatch {
+    padding: 100px 0;
+    background: white;
+}
+
+.inner_stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid var(--pink);
+    border-radius: 20px;
+    padding: 40px;
+    background: linear-gradient(135deg, #fffafc 0%, #fff5f9 100%);
+    margin-top: 50px;
+    transition: all 0.3s ease;
+}
+
+.time {
+    color: var(--dark-pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    height: 100px;
+    width: 100%;
+    border-bottom: 2px solid var(--pink);
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.time_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.interval {
+    min-width: 100px;
+    text-align: center;
+}
+
+.break {
+    color: var(--dark-pink);
+}
+
+.time_buttons {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time_buttons .btn {
+    width: 120px;
+    height: 45px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #ff69b4, #c71585);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.time_buttons .btn:hover {
+    background: linear-gradient(135deg, #c71585, #ff69b4);
+    transform: translateY(-2px);
+}
+
+.time_buttons .btn:active {
+    transform: translateY(0);
+}
+
+.speed_display {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--dark-pink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#speedValue {
+    font-weight: bold;
+    color: var(--pink);
+    font-size: 20px;
+}
+
+/* Стили для разных скоростей */
+.speed-fast {
+    background: linear-gradient(135deg, #e8f5e8, #d4edda) !important;
+    border-color: #28a745 !important;
+}
+
+.speed-slow {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7) !important;
+    border-color: #ffc107 !important;
+}
