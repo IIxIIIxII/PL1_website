@@ -16,6 +16,46 @@ button.addEventListener('click', ()=>{
     }
 });
 
+// Block movement
+const parentBlock = document.querySelector('.parent_block')
+const childBlock = document.querySelector('.child_block')
+
+let x = 0
+let y = 0
+
+let directionX = 1;
+let directionY = 0;
+
+const speed = 3;
+
+function move(){
+    const maxWidth = parentBlock.offsetWidth - childBlock.offsetWidth
+    const maxHeight = parentBlock.offsetHeight - childBlock.offsetHeight
+
+    x+= directionX*speed
+    y+= directionY*speed
+
+    childBlock.style.left = x + 'px'
+    childBlock.style.top = y + 'px'
+
+    if (x>maxWidth && directionX === 1){
+        directionX = 0
+        directionY = 1
+    }else if (y>=maxHeight && directionY===1){
+        directionX = -1
+        directionY = 0
+    }else if (x<=0 && directionX === -1){
+        directionX = 0;
+        directionY = -1
+    }else if (y<=0 && directionY === -1){
+        directionX = 1
+        directionY = 0
+    }
+    setTimeout(move, 10)
+}
+move()
+
+// Stopwatch with Speed Control
 let stopwatchInterval;
 let isRunning = false;
 let startTime;
@@ -65,7 +105,7 @@ function startStopwatch() {
         stopwatchInterval = setInterval(() => {
             elapsedTime = Date.now() - startTime;
             updateDisplay();
-        }, 100 / currentSpeed); // Изменяем интервал в зависимости от скорости
+        }, 100 / currentSpeed);
     }
 }
 
@@ -104,14 +144,15 @@ function changeSpeed(direction) {
     }
 }
 
-// Event Listeners
-startButton.addEventListener('click', startStopwatch);
-stopButton.addEventListener('click', stopStopwatch);
-resetButton.addEventListener('click', resetStopwatch);
-
-speedPlusButton.addEventListener('click', () => changeSpeed('plus'));
-speedMinusButton.addEventListener('click', () => changeSpeed('minus'));
-
-// Инициализация
-updateDisplay();
-updateSpeedDisplay();
+// Event Listeners для секундомера
+if (startButton && stopButton && resetButton && speedMinusButton && speedPlusButton) {
+    startButton.addEventListener('click', startStopwatch);
+    stopButton.addEventListener('click', stopStopwatch);
+    resetButton.addEventListener('click', resetStopwatch);
+    speedPlusButton.addEventListener('click', () => changeSpeed('plus'));
+    speedMinusButton.addEventListener('click', () => changeSpeed('minus'));
+    
+    // Инициализация
+    updateDisplay();
+    updateSpeedDisplay();
+}
