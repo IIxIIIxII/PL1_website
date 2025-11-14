@@ -83,3 +83,82 @@ tabsItemsParents.onclick = (event) => {
         })
     }
 }
+
+
+// Получаем input элементы
+const somInput = document.querySelector('#som');
+const usdInput = document.querySelector('#usd');
+const eurInput = document.querySelector('#eur');
+
+const converter = (element, target1, target2, currentType) => {
+    element.addEventListener('input', async () => {
+        try {
+            const response = await fetch('../data/converter.json');
+            if (!response.ok) throw new Error('Не удалось загрузить данные');
+
+            const data = await response.json();
+            const value = parseFloat(element.value);
+
+            if (!element.value || isNaN(value)) {
+                target1.value = '';
+                target2.value = '';
+                return;
+            }
+
+            switch(currentType) {
+                case 'som':
+                    target1.value = (value / data.usd).toFixed(2);
+                    target2.value = (value / data.eur).toFixed(2);
+                    break;
+                case 'usd':
+                    target1.value = (value * data.usd).toFixed(2);
+                    target2.value = ((value * data.usd) / data.eur).toFixed(2);
+                    break;
+                case 'eur':
+                    target1.value = (value * data.eur).toFixed(2);
+                    target2.value = ((value * data.eur) / data.usd).toFixed(2);
+                    break;
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    });
+};
+
+converter(somInput, usdInput, eurInput, 'som');
+converter(usdInput, somInput, eurInput, 'usd');
+converter(eurInput, somInput, usdInput, 'eur');
+
+
+//Card Swicher
+
+const card = document.querySelector('.card');
+const btnPrev = document.querySelector('#btn-prev');
+const btnNext = document.querySelector('#btn-next');
+
+let count = 1
+const totalCards = 200
+
+async function getCardData(cardNumber){
+    try{
+
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${cardNumber}`);
+        if(!response.ok){
+            throw new Error('Error in server')
+        }
+        return await response.json()
+
+    }catch (error){
+        console.log('errrr data: ', error);
+        return null;
+        
+    }
+}
+
+function updateCard(cardData){
+    card.innerHTML = `
+    <p>${cardData.title}</p>
+    <p style='color: ${cardData.completed ? "green": "yellow"}'> ${cardData.completed}
+    <span>${cardData.id}</span>
+    `
+}
